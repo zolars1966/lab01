@@ -246,4 +246,30 @@ Lloh3:
 
 Результаты работ уровней `O1` и `O2` в данном примере друг от друга не отличаются.
 
+## 10. Дизасемлирование из Java байт-кода
 
+Байт-код цикла:
+
+```
+zolars@Arsenys-MacBook-Air 10 % javac Task10.java 
+zolars@Arsenys-MacBook-Air 10 % javap -c Task10 
+Compiled from "Task10.java"
+public class Task10 {
+  public Task10();
+
+...
+
+      25: istore_1
+      26: iconst_0
+      27: istore        4
+      29: iload         4
+      31: bipush        123
+      33: if_icmpge     46
+      36: iload_2
+      37: iload_1
+      38: iadd
+      39: istore_2
+      40: iinc          4, 1
+      43: goto          29
+      ...
+```
